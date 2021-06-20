@@ -1,4 +1,4 @@
-# CSPParser
+# CSPParser [![Build Status](https://github.com/KirIgor/csp-parser/actions/workflows/ruby.yml/badge.svg)]
 
 CSPParser is a gem for parsing Content Security Policy.
 
