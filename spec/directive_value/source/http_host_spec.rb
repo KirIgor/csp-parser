@@ -14,9 +14,8 @@ describe DirectiveValue::Source::HttpHost do
   end
 
   it "raises error if invalid host" do
-    expect {
+    expect do
       DirectiveValue::Source::HttpHost.new("ftp://*.example.com:*/path")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

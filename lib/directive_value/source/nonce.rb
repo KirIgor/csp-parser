@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative '../directive_value'
-require_relative './source'
-require_relative './base'
-require_relative '../../grammar'
+require_relative "../directive_value"
+require_relative "./source"
+require_relative "./base"
+require_relative "../../grammar"
 
 class DirectiveValue::Source::Nonce < DirectiveValue::Source::Base
   def value
@@ -13,6 +13,6 @@ class DirectiveValue::Source::Nonce < DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{Grammar::NONCE_SOURCE}\z/
+    /\A#{Grammar::NONCE_SOURCE}\z/o
   end
 end

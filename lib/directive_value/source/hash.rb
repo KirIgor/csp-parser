@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative '../directive_value'
-require_relative './source'
-require_relative './base'
-require_relative '../../grammar'
+require_relative "../directive_value"
+require_relative "./source"
+require_relative "./base"
+require_relative "../../grammar"
 
 class DirectiveValue::Source::Hash < DirectiveValue::Source::Base
   def algorithm
@@ -17,6 +17,6 @@ class DirectiveValue::Source::Hash < DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{Grammar::HASH_SOURCE}\z/
+    /\A#{Grammar::HASH_SOURCE}\z/o
   end
 end

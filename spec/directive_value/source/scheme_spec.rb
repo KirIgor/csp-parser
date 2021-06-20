@@ -10,9 +10,8 @@ describe DirectiveValue::Source::Scheme do
   end
 
   it "raises error if invalid scheme" do
-    expect {
+    expect do
       DirectiveValue::Source::Scheme.new("??'")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

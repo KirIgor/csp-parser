@@ -14,9 +14,8 @@ describe DirectiveValue::Source::Host do
   end
 
   it "raises error if invalid host" do
-    expect {
+    expect do
       DirectiveValue::Source::Host.new("??'")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

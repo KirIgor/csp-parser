@@ -4,7 +4,12 @@ require_relative "../lib/csp_parser"
 
 describe CSPParser do
   it "returns serialized policy for right grammars" do
-    policy = CSPParser.parse("default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com")
+    policy = CSPParser.parse(
+      "default-src 'self'; "\
+                  "img-src *; "\
+                  "media-src media1.com media2.com; "\
+                  "script-src userscripts.example.com",
+    )
     expect(policy.class.name).to eq("SerializedPolicy")
   end
 
@@ -16,4 +21,3 @@ describe CSPParser do
     expect(CSPParser.valid_http_host_source?("https://??.example.com:*")).to be_falsey
   end
 end
-

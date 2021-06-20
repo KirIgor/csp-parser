@@ -4,12 +4,12 @@ require_relative "../../lib/directive_value/serialized_source_list"
 
 describe DirectiveValue::SerializedSourceList do
   it "parses right serialized source list" do
-    test_str = "'none' " +
-      "'self' " +
-      "'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=' " +
-      "'nonce-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=' " +
-      "http: " +
-      "*.trusted.com " +
+    test_str = "'none' "\
+      "'self' "\
+      "'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=' "\
+      "'nonce-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=' "\
+      "http: "\
+      "*.trusted.com "\
       "ftp://*.example.com:*"
 
     source_list = DirectiveValue::SerializedSourceList.new(test_str)
@@ -27,9 +27,8 @@ describe DirectiveValue::SerializedSourceList do
   end
 
   it "raises error if invalid serialized source list" do
-    expect {
+    expect do
       DirectiveValue::SerializedSourceList.new("??")
-    }.to raise_error(DirectiveValue::ParseError)
+    end.to raise_error(DirectiveValue::ParseError)
   end
 end
-

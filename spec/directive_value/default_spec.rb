@@ -10,9 +10,8 @@ describe DirectiveValue::Default do
   end
 
   it "raises error if invalid directive value" do
-    expect {
+    expect do
       DirectiveValue::Default.new(",")
-    }.to raise_error(DirectiveValue::ParseError)
+    end.to raise_error(DirectiveValue::ParseError)
   end
 end
-

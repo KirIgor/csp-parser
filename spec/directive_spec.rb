@@ -12,15 +12,15 @@ describe Directive do
   end
 
   it "raises error when invalid type" do
-    expect {
+    expect do
       Directive.new("media-src ??")
-    }.to raise_error(DirectiveValue::ParseError)
+    end.to raise_error(DirectiveValue::ParseError)
   end
 
   it "raises error when invalid directive" do
-    expect {
+    expect do
       Directive.new(";??;")
-    }.to raise_error(Directive::ParseError)
+    end.to raise_error(Directive::ParseError)
   end
 
   it "parses with default value when unknown name" do
@@ -31,4 +31,3 @@ describe Directive do
     expect(directive.value.class.name).to eq("DirectiveValue::Default")
   end
 end
-

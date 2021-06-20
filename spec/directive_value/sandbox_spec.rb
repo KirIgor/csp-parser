@@ -16,9 +16,8 @@ describe DirectiveValue::Sandbox do
   end
 
   it "raises error if invalid sandbox" do
-    expect {
+    expect do
       DirectiveValue::Sandbox.new("??")
-    }.to raise_error(DirectiveValue::ParseError)
+    end.to raise_error(DirectiveValue::ParseError)
   end
 end
-

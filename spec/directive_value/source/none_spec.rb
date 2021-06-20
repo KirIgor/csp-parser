@@ -10,9 +10,8 @@ describe DirectiveValue::Source::None do
   end
 
   it "raises error if invalid none" do
-    expect {
+    expect do
       DirectiveValue::Source::Nonce.new("??'")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

@@ -10,9 +10,8 @@ describe DirectiveValue::Token do
   end
 
   it "raises error if invalid token" do
-    expect {
+    expect do
       DirectiveValue::Token.new("??")
-    }.to raise_error(DirectiveValue::ParseError)
+    end.to raise_error(DirectiveValue::ParseError)
   end
 end
-

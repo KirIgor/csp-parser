@@ -10,9 +10,8 @@ describe DirectiveValue::Source::Keyword do
   end
 
   it "raises error if invalid keyword" do
-    expect {
+    expect do
       DirectiveValue::Source::Keyword.new("??")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

@@ -12,9 +12,8 @@ describe DirectiveValue::Source::Hash do
   end
 
   it "raises error if invalid hash" do
-    expect {
+    expect do
       DirectiveValue::Source::Hash.new("??'")
-    }.to raise_error(DirectiveValue::InvalidSource)
+    end.to raise_error(DirectiveValue::InvalidSource)
   end
 end
-

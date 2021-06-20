@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative './serialized_policy'
-require_relative './directive_value/source/http_host'
+require_relative "./serialized_policy"
+require_relative "./directive_value/source/http_host"
 
 class CSPParser
   class << self
@@ -10,11 +10,9 @@ class CSPParser
     end
 
     def valid_http_host_source?(http_host_str)
-      begin
-        !!DirectiveValue::Source::HttpHost.new(http_host_str)
-      rescue
-        false
-      end
+      !!DirectiveValue::Source::HttpHost.new(http_host_str)
+    rescue
+      false
     end
   end
 end

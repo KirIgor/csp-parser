@@ -12,7 +12,5 @@ class DirectiveValue::Source::Base
     @value_str
   end
 
-  private
-
   # @!method regexp
 end
