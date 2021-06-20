@@ -34,7 +34,7 @@ jobs:
     - name: rubocop
       run: bundle exec rubocop
     - name: run tests
-      run: bundle exec rspec
+      run: COVER=1 bundle exec rspec
     - name: Upload coverage results
       uses: actions/upload-artifact@master
       if: always()
