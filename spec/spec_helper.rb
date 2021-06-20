@@ -9,6 +9,7 @@ SimpleCov.start do
 
   add_group "DirectiveValue", "lib/directive_value"
   add_group "Source", "lib/directive_value/source"
-end
 
-SimpleCov.coverage_dir "coverage"
+  minimum_coverage 90
+  maximum_coverage_drop 2
+end
