@@ -144,7 +144,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Created by Igor Kirianov.
 
-## References
+## Reference
 
 1. MDN Web Docs: https://developer.mozilla.org/ru/docs/Web/HTTP/CSP
 2. Document: https://www.w3.org/TR/CSP3/
