@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.5.0"
   s.name        = "csp_parser"
-  s.version     = "0.1.1"
+  s.version     = "0.1.2"
   s.summary     = "Content Security Policy Parser"
   s.description = "Gem for parsing Content Security Policy."
   s.authors     = ["Igor Kirianov"]
