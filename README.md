@@ -4,12 +4,14 @@ CSPParser is a gem for parsing Content Security Policy.
 
 ## Installation
 
-Add `gem "csp-parser"` to your Gemfile.
+Add `gem "csp_parser"` to your Gemfile.
 
 ## Usage
 
 To parse Content Security Policy:
 ```ruby
+require "csp_parser"
+
 # Content-Security-Policy: 
 policy_str = "default-src 'self';" + 
          "img-src *;" + 
