@@ -2,7 +2,7 @@
 
 require_relative "./directive_value"
 require_relative "./base"
-require_relative "../csp"
+require_relative "../grammar"
 # rubocop:disable Lint/NonDeterministicRequireOrder, Style/StringConcatenation
 Dir[File.dirname(__FILE__) + "/source/*.rb"].each { |file| require file }
 # rubocop:enable Lint/NonDeterministicRequireOrder, Style/StringConcatenation

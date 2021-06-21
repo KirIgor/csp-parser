@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "../../csp"
+require_relative "./source"
+require_relative "../directive_value"
 
 class CSP::DirectiveValue::Source::Base
   def initialize(value_str)

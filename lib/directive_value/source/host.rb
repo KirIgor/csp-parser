@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "../directive_value"
 require_relative "./source"
 require_relative "./base"
 require_relative "../../grammar"
-require_relative "../../csp"
 
 class CSP::DirectiveValue::Source::Host < CSP::DirectiveValue::Source::Base
   def scheme_part
