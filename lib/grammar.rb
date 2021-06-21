@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class Grammar
+require_relative "./csp"
+
+class CSP::Grammar
   ASCII_WHITESPACE = "(\x09|\x0a|\x0c|\x0d|\x20)"
   OPTIONAL_ASCII_WHITESPACE = "#{ASCII_WHITESPACE}*"
   REQUIRED_ASCII_WHITESPACE = "#{ASCII_WHITESPACE}+"

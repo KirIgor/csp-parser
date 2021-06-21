@@ -4,11 +4,12 @@ require_relative "../directive_value"
 require_relative "./source"
 require_relative "../../grammar"
 require_relative "./host"
+require_relative "../../csp"
 
-class DirectiveValue::Source::HttpHost < DirectiveValue::Source::Host
+class CSP::DirectiveValue::Source::HttpHost < CSP::DirectiveValue::Source::Host
   private
 
   def regexp
-    /\A#{Grammar::HTTP_HOST_SOURCE}\z/o
+    /\A#{CSP::Grammar::HTTP_HOST_SOURCE}\z/o
   end
 end

@@ -2,16 +2,16 @@
 
 require_relative "../../lib/directive_value/default"
 
-describe DirectiveValue::Default do
+describe CSP::DirectiveValue::Default do
   it "parses right directive value" do
-    sandbox = DirectiveValue::Default.new("token")
+    sandbox = CSP::DirectiveValue::Default.new("token")
 
     expect(sandbox.to_s).to eq("token")
   end
 
   it "raises error if invalid directive value" do
     expect do
-      DirectiveValue::Default.new(",")
-    end.to raise_error(DirectiveValue::ParseError)
+      CSP::DirectiveValue::Default.new(",")
+    end.to raise_error(CSP::DirectiveValue::ParseError)
   end
 end

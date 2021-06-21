@@ -4,8 +4,9 @@ require_relative "../directive_value"
 require_relative "./source"
 require_relative "./base"
 require_relative "../../grammar"
+require_relative "../../csp"
 
-class DirectiveValue::Source::Host < DirectiveValue::Source::Base
+class CSP::DirectiveValue::Source::Host < CSP::DirectiveValue::Source::Base
   def scheme_part
     @match[:scheme_part]
   end
@@ -25,6 +26,6 @@ class DirectiveValue::Source::Host < DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{Grammar::HOST_SOURCE}\z/o
+    /\A#{CSP::Grammar::HOST_SOURCE}\z/o
   end
 end

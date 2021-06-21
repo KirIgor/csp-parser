@@ -2,9 +2,9 @@
 
 require_relative "../../../lib/directive_value/source/nonce"
 
-describe DirectiveValue::Source::Nonce do
+describe CSP::DirectiveValue::Source::Nonce do
   it "parses right nonce" do
-    nonce = DirectiveValue::Source::Nonce.new(
+    nonce = CSP::DirectiveValue::Source::Nonce.new(
       "'nonce-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='",
     )
 
@@ -14,7 +14,7 @@ describe DirectiveValue::Source::Nonce do
 
   it "raises error if invalid nonce" do
     expect do
-      DirectiveValue::Source::Nonce.new("??'")
-    end.to raise_error(DirectiveValue::InvalidSource)
+      CSP::DirectiveValue::Source::Nonce.new("??'")
+    end.to raise_error(CSP::DirectiveValue::InvalidSource)
   end
 end
