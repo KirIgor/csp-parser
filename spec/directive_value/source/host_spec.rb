@@ -2,9 +2,9 @@
 
 require_relative "../../../lib/directive_value/source/host"
 
-describe DirectiveValue::Source::Host do
+describe CSP::DirectiveValue::Source::Host do
   it "parses right hosts" do
-    host = DirectiveValue::Source::Host.new("ftp://*.example.com:*/path")
+    host = CSP::DirectiveValue::Source::Host.new("ftp://*.example.com:*/path")
 
     expect(host.to_s).to eq("ftp://*.example.com:*/path")
     expect(host.scheme_part).to eq("ftp")
@@ -15,7 +15,7 @@ describe DirectiveValue::Source::Host do
 
   it "raises error if invalid host" do
     expect do
-      DirectiveValue::Source::Host.new("??'")
-    end.to raise_error(DirectiveValue::InvalidSource)
+      CSP::DirectiveValue::Source::Host.new("??'")
+    end.to raise_error(CSP::DirectiveValue::InvalidSource)
   end
 end

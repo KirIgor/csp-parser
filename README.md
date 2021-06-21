@@ -1,6 +1,6 @@
-# CSPParser    ![Build Status](https://github.com/KirIgor/csp-parser/actions/workflows/ruby.yml/badge.svg)
+# CSP::Parser    ![Build Status](https://github.com/KirIgor/csp-parser/actions/workflows/ruby.yml/badge.svg)
 
-CSPParser is a gem for parsing Content Security Policy.
+CSP::Parser is a gem for parsing Content Security Policy.
 
 ## Installation
 
@@ -21,7 +21,7 @@ policy_str = "default-src 'self';" +
          "frame-src https:;" +
          "object-src 'none'"
 
-policy = CSPParser.parse(policy_str)
+policy = CSP::Parser.parse(policy_str)
 # => #<SerializedPolicy:0x00000001231da870 @directives=[
 #      #<Directive:0x00000001231da4d8 @value_str="default-src 'self'", 
 #        @name="default-src", 
@@ -118,7 +118,7 @@ none.to_s # => "'none'"
 
 You can also parse individual source:
 ```ruby
-http_host = DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
+http_host = CSP::DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
 http_host.scheme_part # => "https"
 http_host.host_part # => "*.example.com"
 http_host.port_part # => "*"
@@ -128,9 +128,9 @@ http_host.to_s # => "https://*.example.com:*/path"
 
 Or just check if http host is valid:
 ```ruby
-CSPParser.valid_http_host_source?("https://*.example.com:*/path")
+CSP::Parser.valid_http_host_source?("https://*.example.com:*/path")
 # => true
-CSPParser.valid_http_host_source?("custom-scheme://*.example.com:*/path")
+CSP::Parser.valid_http_host_source?("custom-scheme://*.example.com:*/path")
 # => false
 ```
 

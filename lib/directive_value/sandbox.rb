@@ -3,11 +3,12 @@
 require_relative "./directive_value"
 require_relative "./base"
 require_relative "../grammar"
+require_relative "../csp"
 
-class DirectiveValue::Sandbox < DirectiveValue::Base
+class CSP::DirectiveValue::Sandbox < CSP::DirectiveValue::Base
   private
 
   def regexp
-    /\A#{Grammar::SANDBOX}\z/o
+    /\A#{CSP::Grammar::SANDBOX}\z/o
   end
 end

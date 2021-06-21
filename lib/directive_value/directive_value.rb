@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-module DirectiveValue
+require_relative "../csp"
+
+module CSP::DirectiveValue
   ParseError = Class.new(StandardError)
   InvalidSource = Class.new(StandardError)
 end

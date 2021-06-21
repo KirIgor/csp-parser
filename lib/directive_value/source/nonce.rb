@@ -4,8 +4,9 @@ require_relative "../directive_value"
 require_relative "./source"
 require_relative "./base"
 require_relative "../../grammar"
+require_relative "../../csp"
 
-class DirectiveValue::Source::Nonce < DirectiveValue::Source::Base
+class CSP::DirectiveValue::Source::Nonce < CSP::DirectiveValue::Source::Base
   def value
     @match[:value]
   end
@@ -13,6 +14,6 @@ class DirectiveValue::Source::Nonce < DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{Grammar::NONCE_SOURCE}\z/o
+    /\A#{CSP::Grammar::NONCE_SOURCE}\z/o
   end
 end

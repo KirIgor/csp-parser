@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module DirectiveValue::Source
+require_relative "../../csp"
+
+module CSP::DirectiveValue::Source
 end

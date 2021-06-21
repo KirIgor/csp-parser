@@ -2,9 +2,11 @@
 
 require_relative "../../../lib/directive_value/source/hash"
 
-describe DirectiveValue::Source::Hash do
+describe CSP::DirectiveValue::Source::Hash do
   it "parses right hashes" do
-    hash = DirectiveValue::Source::Hash.new("'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='")
+    hash = CSP::DirectiveValue::Source::Hash.new(
+      "'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='",
+    )
 
     expect(hash.to_s).to eq("'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='")
     expect(hash.algorithm).to eq("sha256")
@@ -13,7 +15,7 @@ describe DirectiveValue::Source::Hash do
 
   it "raises error if invalid hash" do
     expect do
-      DirectiveValue::Source::Hash.new("??'")
-    end.to raise_error(DirectiveValue::InvalidSource)
+      CSP::DirectiveValue::Source::Hash.new("??'")
+    end.to raise_error(CSP::DirectiveValue::InvalidSource)
   end
 end

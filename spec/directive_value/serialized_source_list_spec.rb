@@ -2,7 +2,7 @@
 
 require_relative "../../lib/directive_value/serialized_source_list"
 
-describe DirectiveValue::SerializedSourceList do
+describe CSP::DirectiveValue::SerializedSourceList do
   it "parses right serialized source list" do
     test_str = "'none' "\
       "'self' "\
@@ -12,23 +12,23 @@ describe DirectiveValue::SerializedSourceList do
       "*.trusted.com "\
       "ftp://*.example.com:*"
 
-    source_list = DirectiveValue::SerializedSourceList.new(test_str)
+    source_list = CSP::DirectiveValue::SerializedSourceList.new(test_str)
 
     expect(source_list.to_s).to eq(test_str)
     expect(source_list.sources.map { |s| s.class.name }).to eq(%w[
-      DirectiveValue::Source::None
-      DirectiveValue::Source::Keyword
-      DirectiveValue::Source::Hash
-      DirectiveValue::Source::Nonce
-      DirectiveValue::Source::Scheme
-      DirectiveValue::Source::HttpHost
-      DirectiveValue::Source::Host
+      CSP::DirectiveValue::Source::None
+      CSP::DirectiveValue::Source::Keyword
+      CSP::DirectiveValue::Source::Hash
+      CSP::DirectiveValue::Source::Nonce
+      CSP::DirectiveValue::Source::Scheme
+      CSP::DirectiveValue::Source::HttpHost
+      CSP::DirectiveValue::Source::Host
     ])
   end
 
   it "raises error if invalid serialized source list" do
     expect do
-      DirectiveValue::SerializedSourceList.new("??")
-    end.to raise_error(DirectiveValue::ParseError)
+      CSP::DirectiveValue::SerializedSourceList.new("??")
+    end.to raise_error(CSP::DirectiveValue::ParseError)
   end
 end

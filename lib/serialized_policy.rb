@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "./csp"
 require_relative "./grammar"
 require_relative "./directive"
 
-class SerializedPolicy
+class CSP::SerializedPolicy
   ParseError = Class.new(StandardError)
 
   def initialize(value_str)
@@ -12,7 +13,9 @@ class SerializedPolicy
 
     raise ParseError, @value_str if @match.nil?
 
-    @directives = @value_str.split(";").map { |directive_str| Directive.new(directive_str.strip) }
+    @directives = @value_str.split(";").map do |directive_str|
+      CSP::Directive.new(directive_str.strip)
+    end
   end
 
   def to_s
@@ -24,6 +27,6 @@ class SerializedPolicy
   private
 
   def regexp
-    /\A#{Grammar::SERIALIZED_POLICY}\z/o
+    /\A#{CSP::Grammar::SERIALIZED_POLICY}\z/o
   end
 end
