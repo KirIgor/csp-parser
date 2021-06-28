@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "simplecov"
-require "csp_parser"
 
 SimpleCov.start do
   enable_coverage :branch
@@ -14,3 +13,5 @@ SimpleCov.start do
   minimum_coverage 90
   maximum_coverage_drop 2
 end
+
+require "csp_parser"
