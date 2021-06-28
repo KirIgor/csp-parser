@@ -7,19 +7,18 @@
 
 name: Ruby
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
+
+    # We want to run on external PRs, but not on our own internal PRs as they'll be run on push event
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != 'KirIgor/csp-parser'
+
     strategy:
       matrix:
-        ruby-version: ['2.5']
+        ruby-version: ['2.5', '2.6', '2.7', '3.0']
 
     steps:
     - uses: actions/checkout@v2
@@ -34,7 +33,7 @@ jobs:
     - name: rubocop
       run: bundle exec rubocop
     - name: run tests
-      run: COVER=1 bundle exec rspec
+      run: bundle exec rspec
     - name: Upload coverage results
       uses: actions/upload-artifact@master
       with:
