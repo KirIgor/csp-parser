@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "./csp"
-require_relative "./grammar"
-require_relative "./directive"
-
 class CSP::SerializedPolicy
   ParseError = Class.new(StandardError)
 

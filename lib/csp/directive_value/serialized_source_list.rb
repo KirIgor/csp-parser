@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "./directive_value"
-require_relative "./base"
-require_relative "../grammar"
-# rubocop:disable Lint/NonDeterministicRequireOrder, Style/StringConcatenation
-Dir[File.dirname(__FILE__) + "/source/*.rb"].each { |file| require file }
-# rubocop:enable Lint/NonDeterministicRequireOrder, Style/StringConcatenation
+require_relative "source"
 
 class CSP::DirectiveValue::SerializedSourceList < CSP::DirectiveValue::Base
   SOURCE_LIST = [

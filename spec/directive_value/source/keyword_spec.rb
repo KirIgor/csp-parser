@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../../lib/directive_value/source/keyword"
-
 describe CSP::DirectiveValue::Source::Keyword do
   it "parses right keyword" do
     keyword = CSP::DirectiveValue::Source::Keyword.new("'report-sample'")

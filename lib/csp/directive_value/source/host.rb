@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "./source"
-require_relative "./base"
-require_relative "../../grammar"
-
 class CSP::DirectiveValue::Source::Host < CSP::DirectiveValue::Source::Base
   def scheme_part
     @match[:scheme_part]

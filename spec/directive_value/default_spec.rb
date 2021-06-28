@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../lib/directive_value/default"
-
 describe CSP::DirectiveValue::Default do
   it "parses right directive value" do
     sandbox = CSP::DirectiveValue::Default.new("token")

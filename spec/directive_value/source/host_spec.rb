@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../../lib/directive_value/source/host"
-
 describe CSP::DirectiveValue::Source::Host do
   it "parses right hosts" do
     host = CSP::DirectiveValue::Source::Host.new("ftp://*.example.com:*/path")

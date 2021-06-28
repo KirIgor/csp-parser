@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../lib/directive_value/token"
-
 describe CSP::DirectiveValue::Token do
   it "parses right token" do
     sandbox = CSP::DirectiveValue::Token.new("token")

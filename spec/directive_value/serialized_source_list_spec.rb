@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../lib/directive_value/serialized_source_list"
-
 describe CSP::DirectiveValue::SerializedSourceList do
   it "parses right serialized source list" do
     test_str = "'none' "\
