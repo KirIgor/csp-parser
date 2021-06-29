@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-describe CSP::DirectiveValue::Source::HttpHost do
+describe CSPParser::DirectiveValue::Source::HttpHost do
   it "parses right hosts" do
-    host = CSP::DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
+    host = CSPParser::DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
 
     expect(host.to_s).to eq("https://*.example.com:*/path")
     expect(host.scheme_part).to eq("https")
@@ -13,7 +13,7 @@ describe CSP::DirectiveValue::Source::HttpHost do
 
   it "raises error if invalid host" do
     expect do
-      CSP::DirectiveValue::Source::HttpHost.new("ftp://*.example.com:*/path")
-    end.to raise_error(CSP::DirectiveValue::InvalidSource)
+      CSPParser::DirectiveValue::Source::HttpHost.new("ftp://*.example.com:*/path")
+    end.to raise_error(CSPParser::DirectiveValue::InvalidSource)
   end
 end

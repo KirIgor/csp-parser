@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CSP::SerializedPolicy
+class CSPParser::SerializedPolicy
   ParseError = Class.new(StandardError)
 
   def initialize(value_str)
@@ -10,7 +10,7 @@ class CSP::SerializedPolicy
     raise ParseError, @value_str if @match.nil?
 
     @directives = @value_str.split(";").map do |directive_str|
-      CSP::Directive.new(directive_str.strip)
+      CSPParser::Directive.new(directive_str.strip)
     end
   end
 
@@ -23,6 +23,6 @@ class CSP::SerializedPolicy
   private
 
   def regexp
-    /\A#{CSP::Grammar::SERIALIZED_POLICY}\z/o
+    /\A#{CSPParser::Grammar::SERIALIZED_POLICY}\z/o
   end
 end

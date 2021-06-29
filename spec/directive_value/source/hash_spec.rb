@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-describe CSP::DirectiveValue::Source::Hash do
+describe CSPParser::DirectiveValue::Source::Hash do
   it "parses right hashes" do
-    hash = CSP::DirectiveValue::Source::Hash.new(
+    hash = CSPParser::DirectiveValue::Source::Hash.new(
       "'sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='",
     )
 
@@ -13,7 +13,7 @@ describe CSP::DirectiveValue::Source::Hash do
 
   it "raises error if invalid hash" do
     expect do
-      CSP::DirectiveValue::Source::Hash.new("??'")
-    end.to raise_error(CSP::DirectiveValue::InvalidSource)
+      CSPParser::DirectiveValue::Source::Hash.new("??'")
+    end.to raise_error(CSPParser::DirectiveValue::InvalidSource)
   end
 end

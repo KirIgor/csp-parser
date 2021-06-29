@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CSP::DirectiveValue::Source::Hash < CSP::DirectiveValue::Source::Base
+class CSPParser::DirectiveValue::Source::Hash < CSPParser::DirectiveValue::Source::Base
   def algorithm
     @match[:algorithm]
   end
@@ -12,6 +12,6 @@ class CSP::DirectiveValue::Source::Hash < CSP::DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{CSP::Grammar::HASH_SOURCE}\z/o
+    /\A#{CSPParser::Grammar::HASH_SOURCE}\z/o
   end
 end

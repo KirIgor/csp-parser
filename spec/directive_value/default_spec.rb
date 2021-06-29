@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-describe CSP::DirectiveValue::Default do
+describe CSPParser::DirectiveValue::Default do
   it "parses right directive value" do
-    sandbox = CSP::DirectiveValue::Default.new("token")
+    sandbox = CSPParser::DirectiveValue::Default.new("token")
 
     expect(sandbox.to_s).to eq("token")
   end
 
   it "raises error if invalid directive value" do
     expect do
-      CSP::DirectiveValue::Default.new(",")
-    end.to raise_error(CSP::DirectiveValue::ParseError)
+      CSPParser::DirectiveValue::Default.new(",")
+    end.to raise_error(CSPParser::DirectiveValue::ParseError)
   end
 end

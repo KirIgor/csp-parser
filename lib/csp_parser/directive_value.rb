@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module CSP::DirectiveValue
+module CSPParser::DirectiveValue
   require_relative "directive_value/base"
   require_relative "directive_value/default"
   require_relative "directive_value/sandbox"

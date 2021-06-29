@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-describe CSP::Parser do
+describe CSPParser do
   it "returns serialized policy for right grammars" do
-    policy = CSP::Parser.parse(
+    policy = CSPParser.parse(
       "default-src 'self'; "\
                   "img-src *; "\
                   "media-src media1.com media2.com; "\
                   "script-src userscripts.example.com",
     )
-    expect(policy.class.name).to eq("CSP::SerializedPolicy")
+    expect(policy.class.name).to eq("CSPParser::SerializedPolicy")
   end
 
   it "returns true for valid http hosts" do
-    expect(CSP::Parser.valid_http_host_source?("https://*.example.com:*")).to be_truthy
+    expect(CSPParser.valid_http_host_source?("https://*.example.com:*")).to be_truthy
   end
 
   it "returns false for invalid http hosts" do
-    expect(CSP::Parser.valid_http_host_source?("https://??.example.com:*")).to be_falsey
+    expect(CSPParser.valid_http_host_source?("https://??.example.com:*")).to be_falsey
   end
 end

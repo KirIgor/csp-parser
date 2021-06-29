@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module CSP::DirectiveValue::Source
+module CSPParser::DirectiveValue::Source
   require_relative "source/base"
   require_relative "source/hash"
   require_relative "source/host"

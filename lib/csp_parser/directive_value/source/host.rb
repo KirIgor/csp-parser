@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CSP::DirectiveValue::Source::Host < CSP::DirectiveValue::Source::Base
+class CSPParser::DirectiveValue::Source::Host < CSPParser::DirectiveValue::Source::Base
   def scheme_part
     @match[:scheme_part]
   end
@@ -20,6 +20,6 @@ class CSP::DirectiveValue::Source::Host < CSP::DirectiveValue::Source::Base
   private
 
   def regexp
-    /\A#{CSP::Grammar::HOST_SOURCE}\z/o
+    /\A#{CSPParser::Grammar::HOST_SOURCE}\z/o
   end
 end

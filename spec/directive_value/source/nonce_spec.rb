@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-describe CSP::DirectiveValue::Source::Nonce do
+describe CSPParser::DirectiveValue::Source::Nonce do
   it "parses right nonce" do
-    nonce = CSP::DirectiveValue::Source::Nonce.new(
+    nonce = CSPParser::DirectiveValue::Source::Nonce.new(
       "'nonce-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc='",
     )
 
@@ -12,7 +12,7 @@ describe CSP::DirectiveValue::Source::Nonce do
 
   it "raises error if invalid nonce" do
     expect do
-      CSP::DirectiveValue::Source::Nonce.new("??'")
-    end.to raise_error(CSP::DirectiveValue::InvalidSource)
+      CSPParser::DirectiveValue::Source::Nonce.new("??'")
+    end.to raise_error(CSPParser::DirectiveValue::InvalidSource)
   end
 end
