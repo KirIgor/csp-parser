@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../lib/csp_parser"
-
 describe CSP::Parser do
   it "returns serialized policy for right grammars" do
     policy = CSP::Parser.parse(

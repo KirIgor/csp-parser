@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../lib/directive"
-
 describe CSP::Directive do
   it "parses when right type" do
     directive = CSP::Directive.new("media-src media1.com media2.com")

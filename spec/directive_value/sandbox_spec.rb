@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../lib/directive_value/sandbox"
-
 describe CSP::DirectiveValue::Sandbox do
   it "parses right sandbox" do
     sandbox = CSP::DirectiveValue::Sandbox.new("allow-scripts")

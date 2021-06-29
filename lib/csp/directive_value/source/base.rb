@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "./directive_value"
-
-class CSP::DirectiveValue::Base
+class CSP::DirectiveValue::Source::Base
   def initialize(value_str)
     @value_str = value_str
     @match = @value_str.match(regexp)
 
-    raise CSP::DirectiveValue::ParseError, @value_str if @match.nil?
+    raise CSP::DirectiveValue::InvalidSource, @value_str if @match.nil?
   end
 
   def to_s

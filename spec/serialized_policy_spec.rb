@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../lib/serialized_policy"
-
 describe CSP::SerializedPolicy do
   it "parses right policy" do
     policy_str = "default-src 'self'; "\

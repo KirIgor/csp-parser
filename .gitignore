@@ -1,5 +1,11 @@
-.idea/
-coverage/
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
 
-.rspec
-.DS_Store
+# rspec failure tracking
+.rspec_status

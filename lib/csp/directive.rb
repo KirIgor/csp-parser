@@ -1,12 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "./directive_value/serialized_source_list"
-require_relative "./directive_value/token"
-require_relative "./directive_value/sandbox"
-require_relative "./directive_value/default"
-require_relative "./grammar"
-require_relative "./csp"
-
 class CSP::Directive
   ParseError = Class.new(StandardError)
 

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../../lib/directive_value/source/scheme"
-
 describe CSP::DirectiveValue::Source::Scheme do
   it "parses right scheme" do
     nonce = CSP::DirectiveValue::Source::Scheme.new("example:")

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../../lib/directive_value/source/nonce"
-
 describe CSP::DirectiveValue::Source::Nonce do
   it "parses right nonce" do
     nonce = CSP::DirectiveValue::Source::Nonce.new(

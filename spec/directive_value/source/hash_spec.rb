@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../../../lib/directive_value/source/hash"
-
 describe CSP::DirectiveValue::Source::Hash do
   it "parses right hashes" do
     hash = CSP::DirectiveValue::Source::Hash.new(
