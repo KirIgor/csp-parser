@@ -118,7 +118,7 @@ none.to_s # => "'none'"
 
 You can also parse individual source:
 ```ruby
-http_host = CSP::DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
+http_host = CSPParser::DirectiveValue::Source::HttpHost.new("https://*.example.com:*/path")
 http_host.scheme_part # => "https"
 http_host.host_part # => "*.example.com"
 http_host.port_part # => "*"
@@ -128,9 +128,9 @@ http_host.to_s # => "https://*.example.com:*/path"
 
 Or just check if http host is valid:
 ```ruby
-CSP::Parser.valid_http_host_source?("https://*.example.com:*/path")
+CSPParser.valid_http_host_source?("https://*.example.com:*/path")
 # => true
-CSP::Parser.valid_http_host_source?("custom-scheme://*.example.com:*/path")
+CSPParser.valid_http_host_source?("custom-scheme://*.example.com:*/path")
 # => false
 ```
 
